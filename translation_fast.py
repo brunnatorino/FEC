@@ -25,3 +25,8 @@ mapping_Translation = {" Translation Using 20181026":" Conversion de devise sur 
 
 
 df = df.replace({"EcritureLib":mapping_Valuation}, regex=True)
+
+
+## print specific row
+
+print(df[EcritureLib].loc[[10]])
