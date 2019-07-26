@@ -1,3 +1,14 @@
+## joins document numbers if they are not in already (most important piece of code for sequentiality AND balance of accounts)
+
+import pandas as pd
+GL = pd.read_excel("GL.xlsx")
+ENTRY = pd.read_excel("ENTRY.xlsx")
+DELETED = pd.read_excel("DELETED.xlsx")
+
+numbers = GL['Document Number'].tolist()
+GL = GL.append(ENTRY[~ENTRY['Document Number'].isin(numbers)])
+
+
 import pandas as pd
 from datetime import datetime, date
 
